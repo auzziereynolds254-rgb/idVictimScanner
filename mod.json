@@ -1,0 +1,30 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081"
+	},
+	"id": "user.level-id-scanner",
+	"name": "Level ID Scanner",
+	"version": "v1.0.0",
+	"developer": "user",
+	"description": "Counts backwards from a starting level ID and prints every level whose name contains your keyword.",
+	"tags": [
+		"utility"
+	],
+	"settings": {
+		"requests_per_second": {
+			"type": "float",
+			"name": "Requests per second",
+			"description": "How many requests the scanner sends per second. Each request checks 1 ID. 3 per second got me rate-limited within about 40 seconds; 1.0 is a safer starting point. Nothing slows the scanner down automatically any more.",
+			"default": 1.0,
+			"min": 0.05,
+			"max": 10.0
+		},
+		"only_unlisted": {
+			"type": "bool",
+			"name": "Only show unlisted levels",
+			"description": "When on, levels that are publicly listed are ignored and only unlisted levels that match your keyword are printed. Uses one request per ID, so it is slower than normal mode.",
+			"default": false
+		}
+	}
+}
